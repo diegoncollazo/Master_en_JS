@@ -1,0 +1,4 @@
+https://ionicframework.com
+npm install -g npm-windows-upgrade
+npm install -g npm
+npm install -g @ionic/cli

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Aprendiendo JQuery</title>
+		<script type="text/javascript" src="jquery-3.4.1.js"></script>
+		<script type="text/javascript" src="91-selectores.js"></script>
+		<style>
+			.zebra {
+				border: 5px dashed black;
+			}
+			.grande {
+				font-size: 20px;
+			}
+			.margen-superior{
+				display: block;
+				margin-top: 30px;
+			}
+			.resaltado{
+				border-bottom: 2px solid brown;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Aprendiendo JQuery con Victor Robles</h1>
+		<ul>
+			<li><a href="https://www.google.com.ar" title="Google" >Ir a Google Argentina</a></li>
+			<li><a href="https://www.infobae.com" title="Infobae">Ir a Infobae</a></li>
+		</ul>
+
+		<p id="rojo" class="zebra">Ejercicios de JQuery</p>
+		<p id="amarillo" class="yegua">Practicando con selectores</p>
+		<p id="verde" class="zebra">Parrafo verde</p>
+		<p class="yegua">Sin ID</p>
+		<div id="caja">
+			<p>Hola soy una caja</p>
+			<ul>
+				<li>Elemento 1</li>
+				<li class="resaltado">Elemento 2</li>
+			</ul>
+		</div>
+		<span class="resaltado">Aloha</span>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+Test your front-end against a real API
+https://reqres.in
+
+JQuery Tooltips
+https://iamceege.github.io/tooltipster/
+
+<HTML> / JavaScript() / CSS{}
+http://www.codexexempla.org/index.php
+
+Eventos en JavaScript
+http://laplace.ucv.cl/Cursos/Old/FisComputacional/javascript/Tutorial/javascript5.html
+
+Fotos
+https://morguefile.com/photos/morguefile/1/pop
+
+Projects from backend to frontend projects
+https://real.dev

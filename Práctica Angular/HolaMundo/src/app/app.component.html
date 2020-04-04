@@ -1,0 +1,57 @@
+<head>
+	<title>{{ title }}</title>
+</head>
+
+<div
+	[ngStyle]="{
+		background: config.fondo,
+		padding: '20px',
+		border: '5px solid black',
+		'border-color': config.color
+	}"
+>
+	<nav>
+		<a [routerLink]="['/home']" [routerLinkActive]="['active']">
+			Home
+		</a>
+		&nbsp;
+		<a [routerLink]="['/zapatillas']" [routerLinkActive]="['active']">
+			Zapatillas
+		</a>
+		&nbsp;
+		<a [routerLink]="['/cursos']" [routerLinkActive]="['active']">
+			Cursos
+		</a>
+		&nbsp;
+		<a [routerLink]="['/juegos']" [routerLinkActive]="['active']">
+			Juegos
+		</a>
+		&nbsp;
+		<a [routerLink]="['/externo']" [routerLinkActive]="['active']">
+			Externo
+		</a>
+		&nbsp;
+		<a [routerLink]="['/contacto']" [routerLinkActive]="['active']">
+			Contacto
+		</a>
+		&nbsp;
+		<hr />
+	</nav>
+	<!-- <button (click)="mostrarJuegos(false)" *ngIf="mostrarVideojuego">
+		Ocultar
+	</button>
+	<button (click)="mostrarJuegos(true)" *ngIf="!mostrarVideojuego">
+		Mostrar
+	</button>
+	<p>{{ descripcion }}</p>
+	<videogame *ngIf="mostrarVideojuego"> </videogame> -->
+
+	<!-- A structural directive that conditionally includes a template based 
+		on the value of an expression coerced to Boolean. When the expression 
+		evaluates to true, Angular renders the template provided in a then clause, 
+		and when false or null, Angular renders the template provided in an optional 
+		else clause. The default template for the else clause is blank. -->
+
+	<!-- <sneakers></sneakers> -->
+	<router-outlet></router-outlet>
+</div>

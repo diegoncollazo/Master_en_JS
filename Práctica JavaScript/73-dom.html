@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF8-8" />
+		<script type="text/javascript" src="73-dom.js"></script>
+		<title>Ejercicio completo de Formulario</title>
+		<style>
+			.datos {
+				width: 200px;
+				height: 250px;
+				float: left;
+				margin: 20px;
+			}
+			.enviados {
+				border: 3px dashed black;
+				padding: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>
+			Primera parte del curso.
+		</h1>
+		<div class="datos">
+			<form action="" method="POST" id="formulario" onsubmit="return false;">
+				<label for="nombre">Nombre(s):</label> <br />
+				<input type="text" name="nombre" id="nombre" /> <br />
+				<span id="error_nombre"></span>
+				<label for="apellido">Apellido(s):</label> <br />
+				<input type="text" name="apellido" id="apellido" /> <br />
+				<label for="edad">Edad:</label> <br />
+				<input type="number" name="edad" id="edad" /> <br />
+				<input type="submit" value="Enviar" id="submit" /> <br />
+			</form>
+		</div>
+		<div class="datos enviados">
+			<h3>Información del usuario:</h3>
+			<hr />
+			<p id="p_nombre">Nombre(s): <span></span></p>
+			<p id="p_apellido">Apellido(s): <span></span></p>
+			<p id="p_edad">Edad: <span></span></p>
+		</div>
+	</body>
+</html>

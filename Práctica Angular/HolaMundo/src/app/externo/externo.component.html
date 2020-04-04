@@ -1,0 +1,48 @@
+<h2>Crear usuario</h2>
+<form #newUser="ngForm" (ngSubmit)="onSubmit(newUser)">
+	<label for="nombre">Nombre</label><br />
+	<!-- Two way data-binding -->
+	<input
+		type="text"
+		name="nombre"
+		#name="ngModel"
+		[(ngModel)]="new_user.name"
+		required
+	/>
+	<span *ngIf="name.touched && !name.valid"> El nombre no es valido </span
+	><br />
+	<label for="trabajo">Trabajo</label><br />
+	<!-- Two way data-binding -->
+	<input
+		type="text"
+		name="trabajo"
+		#job="ngModel"
+		[(ngModel)]="new_user.job"
+		required
+	/>
+	<span *ngIf="job.touched && !job.valid"> El trabajo no es valido </span
+	><br />
+	<input
+		type="submit"
+		value="Enviar"
+		[disabled]="!newUser.form.valid"
+	/><br />
+</form>
+<div *ngIf="usuario_guardado">
+	<h3>Nombre: {{ usuario_guardado.name }}</h3>
+	<h4>Trabajo: {{ usuario_guardado.job }}</h4>
+	<h5>ID de trabajo: {{ usuario_guardado.id }}</h5>
+</div>
+<br />
+<!-- <p>{{ fecha | date: "fullDate" }}</p> -->
+<p>{{ fecha | date: "dd/MM/yyyy" }}</p>
+<input type="text" [(ngModel)]="userID" (keyup.enter)="cargaUsuario()" />
+<p *ngIf="!user">{{ "CargandO... " | lowercase }}</p>
+<p>Pipe calculadora: {{ 4 | calculadora: 2 }}</p>
+<div *ngIf="user">
+	<p>Datos de usuario</p>
+	<img src="{{ user.data.avatar }}" width="200" />
+	<p>
+		{{ user.data.first_name }}
+	</p>
+</div>
