@@ -1,4 +1,5 @@
 "use strict";
+// Modulos en variables
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
@@ -15,8 +16,10 @@ app.get("/", (req, res) => {
 	res.status(200).send("<h1>Pagina principal</h1>");
 });
 
-app.post("/test", (req, res) => {
-	console.log(req.param("name"));
+app.post("/test/:id", (req, res) => {
+	console.log(req.body.name);
+	console.log(req.query.web);
+	console.log(req.params.id);
 	res.status(200).send({
 		message: "Hola desde API NodeJS",
 	});

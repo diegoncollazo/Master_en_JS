@@ -4,4 +4,6 @@ npm install connect-multiparty --save
 npm install mongoose --save
 npm install nodemon --save-dev
 
+npm start
+
 https://www.postman.com
