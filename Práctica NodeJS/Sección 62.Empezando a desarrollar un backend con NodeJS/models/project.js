@@ -1,6 +1,6 @@
 "use strict";
 var mongoose = require("mongoose");
-var schema = mongoose.schema;
+var schema = mongoose.Schema;
 var projectSchema = schema({
 	name: String,
 	description: String,
