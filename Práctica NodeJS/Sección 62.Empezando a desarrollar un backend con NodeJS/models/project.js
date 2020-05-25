@@ -1,11 +1,12 @@
 "use strict";
 var mongoose = require("mongoose");
-var schema = mongoose.schema;
-var projectSchema = schema({
+var Schema = mongoose.Schema;
+var projectSchema = Schema({
 	name: String,
 	description: String,
 	category: String,
 	year: Number,
-	langs: [String],
+	langs: String,
+	image: String,
 });
-module.exports = mongoose.model("Proyect", projectSchema);
+module.exports = mongoose.model("Project", projectSchema);
