@@ -15,8 +15,8 @@ var controller = {
 	saveProyect: function (req, res) {
 		var project = new Project();
 
-        var params = req.body;
-        
+		var params = req.body;
+
 		project.name = params.name;
 		project.description = params.description;
 		project.category = params.category;
@@ -39,10 +39,27 @@ var controller = {
 			project: project,
 			message: "Metodo SAVE",
 		});
-    },
-    getProyect: function (req, res) {
-        
-    }
+	},
+	getProyect: function (req, res) {
+		var projectID = req.params.id;
+
+		if (projectID == null)
+			return res
+				.status(404)
+				.send({ message: "No envia ID de búsqueda." });
+
+		Project.findById(projectID, (err, project) => {
+			if (err)
+				return res
+					.status(500)
+					.send({ message: "Error al obtener los datos." });
+			if (!project)
+				return res
+					.status(404)
+					.send({ message: "El proyecto no existe." });
+			return res.status(200).send({ project });
+		});
+	},
 };
 
 module.exports = controller;
