@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//Modulos propios
+import { Routing, AppRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -9,18 +11,16 @@ import { AboutComponent } from './components/about/about.component';
 import { CreateComponent } from './components/create/create.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ContactComponent,
-    ErrorComponent,
-    ProjectsComponent,
-    AboutComponent,
-    CreateComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		ContactComponent,
+		ErrorComponent,
+		ProjectsComponent,
+		AboutComponent,
+		CreateComponent,
+	],
+	imports: [BrowserModule, Routing],
+	providers: [AppRoutingProviders],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
