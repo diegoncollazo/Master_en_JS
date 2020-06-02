@@ -1,16 +1,29 @@
-<h1>Proyecto</h1>
-<ul>
-	<li>
-		<a [routerLink]="['/sobre-mi']">Sobre mí</a>
-	</li>
-	<li>
-		<a [routerLink]="['/proyectos']">Proyectos</a>
-	</li>
-	<li>
-		<a [routerLink]="['/crear-proyecto']">Nuevo proyecto</a>
-	</li>
-	<li>
-		<a [routerLink]="['/contacto']">Contacto</a>
-	</li>
-</ul>
-<router-outlet></router-outlet>
+<header>
+	<ul>
+		<li>
+			<a [routerLink]="['/sobre-mi']" routerLinkActive="active-link"
+				>Sobre mí</a
+			>
+		</li>
+		<li>
+			<a [routerLink]="['/proyectos']" routerLinkActive="active-link"
+				>Proyectos</a
+			>
+		</li>
+		<li id="logo"><a href="#">DC</a></li>
+		<li>
+			<a [routerLink]="['/crear-proyecto']" routerLinkActive="active-link"
+				>Nuevo proyecto</a
+			>
+		</li>
+		<li>
+			<a [routerLink]="['/contacto']" routerLinkActive="active-link"
+				>Contacto</a
+			>
+		</li>
+	</ul>
+</header>
+
+<section id="content"><router-outlet></router-outlet></section>
+
+<footer>Máster en JavaScript programado por DNC &copy;;</footer>
