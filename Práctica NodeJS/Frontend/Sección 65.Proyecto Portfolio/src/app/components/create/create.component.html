@@ -1,1 +1,107 @@
-<p>create works!</p>
+<div class="container">
+    <h2>{{ _title }}</h2>
+    <div class="message success" *ngIf="_status == 'success'">
+        El proyecto se ha guardado correctamente. Puedes verlo
+        <a href="#">aquí.</a>
+    </div>
+    <div class="message failed" *ngIf="_status == 'failed'">
+        El proyecto no se ha podido guardar.
+    </div>
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <!-- Nombre -->
+        <p>
+            <label for="name">Nombre</label>
+            <!-- Two way data binding -->
+            <input
+                type="text"
+                name="name"
+                #name="ngModel"
+                [(ngModel)]="_project.name"
+                pattern="[a-zA-Z]+"
+                required
+            />
+            <!-- Compruebo si fue validado -->
+            <span class="form_error" *ngIf="name.touched && !name.valid">
+                *el nombre es obligatorio
+            </span>
+        </p>
+        <!-- Descripción -->
+        <p>
+            <label for="description">Descripción</label>
+            <!-- Two way data binding -->
+            <textarea
+                name="description"
+                #description="ngModel"
+                [(ngModel)]="_project.description"
+                required
+            ></textarea>
+            <!-- Compruebo si fue validado -->
+            <span
+                class="form_error"
+                *ngIf="description.touched && !description.valid"
+            >
+                *la descripción es obligatoria
+            </span>
+        </p>
+        <!-- Categoría -->
+        <p>
+            <label for="category">Categoría</label>
+            <!-- Two way data binding -->
+            <input
+                type="text"
+                name="category"
+                #category="ngModel"
+                [(ngModel)]="_project.category"
+                required
+            />
+            <!-- Compruebo si fue validado -->
+            <span
+                class="form_error"
+                *ngIf="category.touched && !category.valid"
+            >
+                *la categoría es obligatoria
+            </span>
+        </p>
+        <!-- Año -->
+        <p>
+            <label for="year">Año de lanzamiento</label>
+            <!-- Two way data binding -->
+            <input
+                type="number"
+                name="year"
+                #year="ngModel"
+                [(ngModel)]="_project.year"
+            />
+        </p>
+        <!-- Lenguajes utilizados-->
+        <p>
+            <label for="langs">Lenguajes</label>
+            <!-- Two way data binding -->
+            <input
+                type="text"
+                name="langs"
+                #langs="ngModel"
+                [(ngModel)]="_project.langs"
+                required
+            />
+            <!-- Compruebo si fue validado -->
+            <span class="form_error" *ngIf="langs.touched && !langs.valid">
+                *los lenguajes son obligatorios
+            </span>
+        </p>
+        <!-- Imagen -->
+        <p>
+            <label for="image">Imagen del proyecto</label>
+            <input type="file" name="image" placeholder="Subir imagen" />
+        </p>
+        <!-- Enviar -->
+        <!-- <button type="submit" disabled="!projectForm.form.valid">
+            Enviar
+        </button> -->
+        <input
+            type="submit"
+            value="Enviar"
+            [disabled]="!projectForm.form.valid"
+        />
+    </form>
+</div>
