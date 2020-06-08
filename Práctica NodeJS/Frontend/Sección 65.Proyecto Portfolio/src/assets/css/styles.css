@@ -195,11 +195,12 @@ form input[disabled] {
     width: 50%;
     border: 1px solid #eee;
 }
-.success, .success a{
+.success,
+.success a {
     background: green;
     color: white;
 }
-.failed{
+.failed {
     background: red;
     color: white;
 }

@@ -15,6 +15,7 @@ import { Global } from './../../services/global';
 export class CreateComponent implements OnInit {
     public _title: string;
     public _project: Project;
+    public _save_project;
     public _status: string;
     public _filesToUpload: Array<File>;
 
@@ -28,26 +29,32 @@ export class CreateComponent implements OnInit {
 
     ngOnInit(): void {}
 
-    onSubmit(_form: any) {
-        // Guardar formulario
-        // Subscribe recoje lo que me devuelve la API Rest
+    onSubmit(form) {
+        // Guardar datos básicos
         this._projectService.saveProject(this._project).subscribe(
             (response) => {
-                if (response) {
+                if (response.project) {
                     // Subir la imagen
-                    this._uploadService
-                        .makeFileRequest(
-                            Global.url + 'upload-image/' + this._project._id,
-                            [],
-                            this._filesToUpload,
-                            'image'
-                        )
-                        .then((result: any) => {
-                            console.log(result);
-                            this._status = 'success'; 
-                            // Reseteo el formulario
-                            _form.reset();
-                        });
+                    if (this._filesToUpload) {
+                        this._uploadService
+                            .makeFileRequest(
+                                Global.url +
+                                    'upload-image/' +
+                                    response.project._id,
+                                [],
+                                this._filesToUpload,
+                                'image'
+                            )
+                            .then((result: any) => {
+                                this._save_project = result.project;
+                                this._status = 'success';
+                                form.reset();
+                            });
+                    } else {
+                        this._save_project = response._project;
+                        this._status = 'success';
+                        form.reset();
+                    }
                 } else {
                     this._status = 'failed';
                 }
@@ -57,6 +64,7 @@ export class CreateComponent implements OnInit {
             }
         );
     }
+    // Metodo que detecta cambio en los Inputs
     fileChangeEvent(_fileInput: any) {
         this._filesToUpload = <Array<File>>_fileInput.target.files;
     }

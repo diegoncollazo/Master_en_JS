@@ -92,12 +92,14 @@
         <!-- Imagen -->
         <p>
             <label for="image">Imagen del proyecto</label>
-            <input type="file" name="image" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
+            <input
+                type="file"
+                name="image"
+                placeholder="Subir imagen"
+                (change)="fileChangeEvent($event)"
+            />
         </p>
         <!-- Enviar -->
-        <!-- <button type="submit" disabled="!projectForm.form.valid">
-            Enviar
-        </button> -->
         <input
             type="submit"
             value="Enviar"
