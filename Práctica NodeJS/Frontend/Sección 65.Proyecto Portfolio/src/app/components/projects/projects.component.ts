@@ -1,15 +1,36 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from '../../models/project';
+import { ProjectService } from '../../services/project.service';
+import { Global } from '../../services/global';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+    selector: 'app-projects',
+    templateUrl: './projects.component.html',
+    styleUrls: ['./projects.component.css'],
+    providers: [ProjectService],
 })
 export class ProjectsComponent implements OnInit {
+    public _projects: Project[];
+    public _url: string;
+    constructor(private _projectService: ProjectService) {
+        this._url = Global.url;
+    }
 
-  constructor() { }
+    ngOnInit(): void {
+        // Llamo al cagar el HTML
+        this.getProjects();
+    }
 
-  ngOnInit(): void {
-  }
-
+    getProjects() {
+        this._projectService.getProjects().subscribe(
+            (response) => {
+                if(response.projects){
+                    this._projects = response.projects;
+                }
+            },
+            (error) => {
+                console.log(<any>error);
+            }
+        );
+    }
 }

@@ -7,9 +7,9 @@ import { Global } from './global';
 // Decorador
 @Injectable()
 export class ProjectService {
-    public url: string;
+    public _url: string;
     constructor(private _http: HttpClient) {
-        this.url = Global.url;
+        this._url = Global.url;
     }
     testService() {
         return 'Probando el servicio Angular';
@@ -20,8 +20,15 @@ export class ProjectService {
             'Content-Type',
             'application/json'
         );
-        return this._http.post(this.url + 'save-project', _params, {
+        return this._http.post(this._url + 'save-project', _params, {
             headers: _headers,
         });
+    }
+    getProjects(): Observable<any> {
+        let _headers = new HttpHeaders().set(
+            'Content-Type',
+            'application/json'
+        );
+        return this._http.get(this._url + 'projects', { headers: _headers });
     }
 }
