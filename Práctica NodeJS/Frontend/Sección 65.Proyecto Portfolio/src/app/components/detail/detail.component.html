@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="image">
+        <img
+            src="{{ _url + 'get-image/' + _project.image }}"
+            *ngIf="_project.image"
+        />
+    </div>
+    <div class="data">
+        <h1>{{ _project.name }}</h1>
+        <h3>{{ _project.description }}</h3>
+        <p>{{ _project.category }}</p>
+        <p>{{ _project.langs }}</p>
+    </div>
+</div>

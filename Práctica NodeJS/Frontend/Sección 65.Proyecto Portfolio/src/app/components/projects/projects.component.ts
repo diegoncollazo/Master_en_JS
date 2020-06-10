@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // Llamo al cagar el HTML
+        // Llamo al cargar el HTML
         this.getProjects();
     }
 

@@ -11,6 +11,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { AboutComponent } from './components/about/about.component';
 import { CreateComponent } from './components/create/create.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { CreateComponent } from './components/create/create.component';
         ProjectsComponent,
         AboutComponent,
         CreateComponent,
+        DetailComponent,
     ],
     imports: [BrowserModule, Routing, HttpClientModule, FormsModule],
     providers: [AppRoutingProviders],

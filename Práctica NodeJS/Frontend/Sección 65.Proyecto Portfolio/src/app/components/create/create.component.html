@@ -1,8 +1,9 @@
 <div class="container">
     <h2>{{ _title }}</h2>
     <div class="message success" *ngIf="_status == 'success'">
-        El proyecto se ha guardado correctamente. Puedes verlo
-        <a href="#">aquí.</a>
+        El proyecto se ha guardado correctamente. Puedes verlo <a
+            [routerLink]="['/proyecto', _save_project._id]"
+            >aquí.</a>
     </div>
     <div class="message failed" *ngIf="_status == 'failed'">
         El proyecto no se ha podido guardar.

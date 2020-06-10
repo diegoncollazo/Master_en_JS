@@ -31,4 +31,13 @@ export class ProjectService {
         );
         return this._http.get(this._url + 'projects', { headers: _headers });
     }
+    getProject(_id): Observable<any> {
+        let _headers = new HttpHeaders().set(
+            'Content-Type',
+            'application/json'
+        );
+        return this._http.get(this._url + 'project/' + _id, {
+            headers: _headers,
+        });
+    }
 }
