@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
-import { Form } from '@angular/forms';
+// import { Form } from '@angular/forms';
 import { UploadService } from '../../services/upload.service';
 import { Global } from './../../services/global';
 
@@ -18,6 +18,7 @@ export class CreateComponent implements OnInit {
     public _save_project;
     public _status: string;
     public _filesToUpload: Array<File>;
+    public _url: string;
 
     constructor(
         private _projectService: ProjectService,
@@ -25,6 +26,7 @@ export class CreateComponent implements OnInit {
     ) {
         this._title = 'Crear proyecto';
         this._project = new Project('', '', '', '', 2020, '', '');
+        this._url = Global.url;
     }
 
     ngOnInit(): void {}
