@@ -1,1 +1,10 @@
-<p>contact works!</p>
+<div class="container">
+    <h1>Contacto</h1>
+    Tamaño del slider:
+    <input type="number" [(ngModel)]="withSlider" />
+    <button (click)="cargarSlider()">Cargar galeria</button>
+    <button (click)="reiniciarSlider()">Reiniciar galeria</button>
+    <div *ngIf="anchoToSlider">
+        <slider [ancho]="anchoToSlider" [etiquetas]="captions"></slider>
+    </div>
+</div>

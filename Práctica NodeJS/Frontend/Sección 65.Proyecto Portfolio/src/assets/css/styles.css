@@ -267,3 +267,8 @@ form input[disabled] {
     font-weight: bold;
     margin-top: 20px;
 }
+
+.bx-wrapper {
+    position: fixed;
+    margin-left: 200px;
+}

@@ -20,8 +20,14 @@
                         "tsConfig": "tsconfig.app.json",
                         "aot": true,
                         "assets": ["src/favicon.ico", "src/assets"],
-                        "styles": ["src/assets/css/styles.css"],
-                        "scripts": []
+                        "styles": [
+                            "src/assets/css/styles.css",
+                            "node_modules/bxslider/dist/jquery.bxslider.css"
+                        ],
+                        "scripts": [
+                            "node_modules/jquery/dist/jquery.min.js",
+                            "node_modules/bxslider/dist/jquery.bxslider.js"
+                        ]
                     },
                     "configurations": {
                         "production": {
