@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 // JQuery GENERAL
 // import * as $ from 'jquery';
 // JQUERY local
@@ -15,7 +15,17 @@ export class SliderComponent implements OnInit {
     // Cambio nombre que recibo de componente padre.
     @Input('etiquetas') captions: boolean;
 
-    constructor() {}
+    @Output() getAutor = new EventEmitter();
+
+    public autor: any;
+
+    constructor() {
+        this.autor = {
+            nombre: 'Diego Collazo',
+            website: 'www.google.com.ar',
+            youtube: 'Diego Collazo DEV',
+        };
+    }
 
     ngOnInit(): void {
         $('#logo').click(function (e) {
@@ -31,5 +41,12 @@ export class SliderComponent implements OnInit {
             // Utilizo el ancho del formulario Contact.
             slideWidth: this.ancho,
         });
+        // Lanzo el evento directo
+        this.getAutor.emit(this.autor);
+    }
+    // Evento
+    lanzar(event) {
+        // console.log(event);
+        this.getAutor.emit(this.autor);
     }
 }

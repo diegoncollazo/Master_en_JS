@@ -14,6 +14,7 @@ import { CreateComponent } from './components/create/create.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { ResaltadoDirective } from './resaltado.directive';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { SliderComponent } from './components/slider/slider.component';
         DetailComponent,
         EditComponent,
         SliderComponent,
+        ResaltadoDirective,
     ],
     imports: [BrowserModule, Routing, HttpClientModule, FormsModule],
     providers: [AppRoutingProviders],

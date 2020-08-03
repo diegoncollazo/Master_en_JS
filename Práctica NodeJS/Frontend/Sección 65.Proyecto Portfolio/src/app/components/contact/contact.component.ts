@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'app-contact',
@@ -7,19 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
     public withSlider: number;
-    public anchoToSlider: number;
+    public anchoToSlider: any;
     public captions: boolean;
+    public autor: any;
+    // Tomo la variable textos y la asigno a propiedad Textos
+    @ViewChild('textos') textos: any;
 
     constructor() {
         this.captions = true;
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        // alert(document.querySelector("#texto").innerHTML);
+        //console.log(this.textos);
+    }
 
     cargarSlider() {
         this.anchoToSlider = this.withSlider;
     }
     reiniciarSlider() {
-        this.anchoToSlider = null;
+        this.anchoToSlider = false;
+    }
+
+    getAutor(event) {
+        // console.log(event);
+        this.autor = event;
     }
 }

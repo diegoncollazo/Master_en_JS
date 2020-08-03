@@ -1,10 +1,23 @@
 <div class="container">
     <h1>Contacto</h1>
-    Tamaño del slider:
+    <!-- Variable #textos -->
+    <div id="texto" #textos>
+        <!-- Directivas -->
+        <p [hidden]="false" appResaltado>
+            Esta es la pagina de contacto, puedes enviarnos cualquier duda.
+        </p>
+    </div>
+
+    <!-- Tamaño del slider:
     <input type="number" [(ngModel)]="withSlider" />
     <button (click)="cargarSlider()">Cargar galeria</button>
     <button (click)="reiniciarSlider()">Reiniciar galeria</button>
     <div *ngIf="anchoToSlider">
-        <slider [ancho]="anchoToSlider" [etiquetas]="captions"></slider>
+        <slider
+            [ancho]="anchoToSlider"
+            [etiquetas]="captions"
+            (getAutor)="getAutor($event)"
+        ></slider>
     </div>
+    {{ autor.nombre + " " + autor.website }} -->
 </div>
